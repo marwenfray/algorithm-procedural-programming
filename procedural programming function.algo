@@ -1,0 +1,30 @@
+//function that uses pass by reference(parameter).
+FUNCTION dot_product(v1,v2 : ARRAY_OF FLOAT[3];) : FLOAT
+VAR
+    i: INTEGER;
+    ps:FLOAT;
+BEGIN
+    FOR i FROM 0 TO 2 STEP 1  DO
+     ps := ps + (v1[i]*v2[i])
+    END_FOR
+    RETURN ps ;
+END
+//algorithm using a function.
+ALGORITHM dot product
+VAR
+    n:INTEGER;
+    j: INTEGER :=0;
+    a,b:ARRAY_OF FLOAT;
+    scalar:FLOAT;
+BEGIN
+    FOR j FROM 0 TO n-1 STEP 1  DO
+  scalar:= dot_product(a,b)
+  //Using while instead of if statement because I have been asked to use a nested loop.
+  WHILE (scalar=0) DO
+    Write ("a and b are othogonal.")
+  END_WHILE
+  WHILE (scalar<>0) DO
+    Write("a and b are not orthogonal.")
+  END_WHILE
+ END_FOR
+END

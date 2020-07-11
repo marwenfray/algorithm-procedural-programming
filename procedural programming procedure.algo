@@ -1,0 +1,30 @@
+//procedure that uses pass by value(parameter).
+PROCEDURE dot_product(v1,v2: ARRAY_OF FLOAT[3];)
+VAR
+  ps:FLOAT :=0;
+  i:INTEGER :=0;
+BEGIN
+    FOR i FROM 0 TO 2 STEP 1  DO
+     ps := ps + (v1[i]*v2[i])
+    END_FOR
+END
+//algorithm using a procedure.
+ALGORITHM dot product
+VAR
+    n:INTEGER;
+    j:INTEGER :=0;
+    a,b:ARRAY_OF FLOAT[3];
+BEGIN
+ Write("please fill in the coordinates of the vectors a and b.")
+ Read(a,b)
+ FOR j FROM 0 TO n-1 STEP 1  DO
+  dot_product(a,b)
+    //Using while instead of if statement because I have been asked to use a nested loop.
+  WHILE ((slect ps from dot_product/*I used select to retrieve the ps value from dot_product*/)=0) DO
+    Write ("a and b are othogonal.")
+  END_WHILE
+  WHILE ((slect ps from dot_product)<>0) DO
+    Write("a and b are not orthogonal.")
+  END_WHILE
+ END_FOR
+END
